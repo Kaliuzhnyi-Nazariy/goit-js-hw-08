@@ -18,6 +18,10 @@ function storageFormData(e) {
 function onSubmit(e) {
   e.preventDefault();
 
+  if (refs.input.value === '') {
+    return alert('Hey, you should fill all fields!');
+  }
+
   console.log(formData);
   e.currentTarget.reset();
   localStorage.removeItem(LOCAL_KEY);
