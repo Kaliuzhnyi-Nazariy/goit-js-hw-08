@@ -1,5 +1,8 @@
 import throttle from 'lodash.throttle';
 
+const input = document.querySelector('input')
+const comment = document.querySelector('textarea')
+
 const LS_KEY = 'feedback-form-state';
 let formData = JSON.parse(localStorage.getItem(LS_KEY)) || {};
 
@@ -18,7 +21,7 @@ function storageFormData(e) {
 function onSubmit(e) {
   e.preventDefault();
 
-  if (refs.input.value === '') {
+  if (input.value === '' || comment.value === '') {
     return alert('Hey, you should fill all fields!');
   }
 
